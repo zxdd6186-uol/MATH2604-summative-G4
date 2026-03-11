@@ -8,3 +8,7 @@ static double[][] exampleMatrix(int n)
         return m; //dummy code: write your own
     }
 }
+
+class Tridiagonals{
+    public static boolean isValidTridiagonal(double[][] a) 
+}
