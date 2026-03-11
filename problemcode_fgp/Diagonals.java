@@ -1,3 +1,5 @@
+import static org.junit.Assert.*;
+
 class Diagonals {
 
     public static double[] exampleMatrix() {
