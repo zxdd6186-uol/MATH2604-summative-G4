@@ -29,7 +29,7 @@ static double[][] exampleMatrix(int n)
             return false;
         }
         if (a[1].length != n){
-            return false; //checking weather the main diagonal storage array is the same length as the superdiagonal
+            return false; //checking whether the main diagonal storage array is the same length as the superdiagonal
         }
         if (a[2].length != n){
             return false; //checking whether the subdiagonal storage array is the same length as the superdiagonal
