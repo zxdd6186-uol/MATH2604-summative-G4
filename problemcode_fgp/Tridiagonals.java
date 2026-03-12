@@ -36,4 +36,16 @@ static double[][] exampleMatrix(int n)
         } 
         return true;//returns true if all the other tests pass
     }
+    public static double[] linearSolve(double[][] a, double[] v) {
+        if (!isValidTridiagonal(a)){ //checks whether a is a valid tridiagonal matrix 
+            return null;
+        }
+        if (v == null) { //checks wether the vector v exists 
+            return null; 
+        }
+        int n = a[1].length; //checking the length of the main diagonal, and therefore size of matrix
+        if (v.length != n) { //checking wether the vector is the right size 
+            return null;
+        }
 }
+
