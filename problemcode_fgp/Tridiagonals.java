@@ -36,16 +36,50 @@ static double[][] exampleMatrix(int n)
         } 
         return true;//returns true if all the other tests pass
     }
-    public static double[] linearSolve(double[][] a, double[] v) {
-        if (!isValidTridiagonal(a)){ //checks whether a is a valid tridiagonal matrix 
+    public static double[] linearSolve(double[][] T, double[] v) {
+        if (!isValidTridiagonal(T)){ //checks whether a is a valid tridiagonal matrix 
             return null;
         }
         if (v == null) { //checks wether the vector v exists 
             return null; 
         }
-        int n = a[1].length; //checking the length of the main diagonal, and therefore size of matrix
+        int n = T[1].length; //checking the length of the main diagonal, and therefore size of matrix
         if (v.length != n) { //checking wether the vector is the right size 
             return null;
         }
-}
+        double[] upper = new double[T[0].length];
+        double[] main  = new double[T[1].length];
+        double[] lower = new double[T[2].length];
+        double[] b = new double[v.length];
 
+        for (int i=0; i < upper.length; i++) {
+            upper[i] = T[0][i]; //coppies each value from the superdiagonal of T into the copy array
+        }
+        for (int i = 0; i < main.length; i++) {
+            main[i] = T[1][i]; //coppies each value from main diagonal of T into the copy array
+        }
+        for (int i = 0; i < lower.length; i++) {
+            lower[i] = T[2][i]; //coppies each value from subdiagonal diagonal of T into the copy array
+        }
+        for (int i = 0; i < b.length; i++) {
+            b[i] = v[i]; //copying values from v to b  (the vector rhs)
+        }
+        double[] x = new double[n]; //creates new array to store the sollution
+        
+        if (n == 1) { //checks if the system only has one equation 
+        x[0] = b[0] / main[0]; //solves the equation
+        return x; 
+        }
+        for (int i = 1; i < n; i++) { //remove the lower diagonal on the matrix, start at i=1 because the first row has nothing to eliminate 
+            double factor = lower[i - 1] / main[i - 1]; // calculates what is needed to multiply to eliminate the lower diagonal
+            main[i] = main[i] - factor * upper[i - 1]; //updating the main diagonal after elminating the subdiagonal
+            b[i] = b[i] - factor * b[i - 1]; //updating the rhs of the quational after the elimination step
+        } 
+        x[n - 1] = b[n - 1] / main[n - 1]; //back substitution 
+
+        for (int i = n - 2; i >= 0; i--) { //going backwards through the equation, from the second last row to the first
+            x[i] = (b[i] - upper[i] * x[i + 1]) / main[i]; //solving for xi
+        return x; //returning x from the equation Tx = v
+        }
+    }
+}
