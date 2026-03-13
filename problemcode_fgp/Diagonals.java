@@ -7,4 +7,15 @@ class Diagonals {
         return a; //returns the array which represents the diagonal for the matrix
     }
 
+    public static double[] inverse(double[] a) {
+        if (a == null) {
+            return null
+        }
+        double[] result = double[a.length];
+        for (int i = 0; i < a.length; i++) {
+            result[i] = 1.0 / a[i];
+        }
+        return result;
+    }
+
 }
