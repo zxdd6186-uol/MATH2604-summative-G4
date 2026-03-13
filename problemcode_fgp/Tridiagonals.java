@@ -1,5 +1,7 @@
 import static java.lang.Math.*;
 
+import java.util.Arrays;
+
 class Tridiagonals{
 
 static double[][] exampleMatrix(int n) 
@@ -73,7 +75,8 @@ static double[][] exampleMatrix(int n)
 
         for (int i = n - 2; i >= 0; i--) { //going backwards through the equation, from the second last row to the first
             x[i] = (b[i] - upper[i] * x[i + 1]) / main[i]; //solving for xi
-        return x; //returning x from the equation Tx = v
         }
+        return x; //returning x from the equation Tx = v
     }
+    
 }
