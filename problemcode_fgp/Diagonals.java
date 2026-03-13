@@ -9,9 +9,9 @@ class Diagonals {
 
     public static double[] inverse(double[] a) {
         if (a == null) {
-            return null
+            return null;
         }
-        double[] result = double[a.length];
+        double[] result = new double[a.length];
         for (int i = 0; i < a.length; i++) {
             result[i] = 1.0 / a[i];
         }
