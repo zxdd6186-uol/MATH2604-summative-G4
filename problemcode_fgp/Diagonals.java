@@ -11,7 +11,7 @@ class Diagonals {
  * Computes the inverse of a diagonal matrix by calculating the reciprocal of each diagonal entry.
  * 
  * @param a an array which contains the diagonal entries of the matrix
- * @return an array which contains the reciprocals of each of the diagonal entries from the input matrix,
+ * @return results an array which contains the reciprocals of each of the diagonal entries from the input matrix,
  * or null in the exceptional case wherein the input array is null
  * 
  * Assumes that the matrix is invertible, none of the diagonal entries are zero
@@ -20,9 +20,9 @@ class Diagonals {
         if (a == null) {
             return null;
         }
-        double[] result = new double[a.length];
+        double[] result = new double[a.length]; // Creates a new array called result which is the same length as a
         for (int i = 0; i < a.length; i++) {
-            result[i] = 1.0 / a[i];
+            result[i] = 1.0 / a[i]; // Calculates reciprocal of each entry
         }
         return result;
     }
