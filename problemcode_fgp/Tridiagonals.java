@@ -17,7 +17,7 @@ static double[][] exampleMatrix(int n)
         if (a.length != 3) { // there are 3 diagonals in the matrix or 3 'rows' in the storage array
             return false;
         }
-        if (a[0] == null || a[1] == null || a[2] == null) {
+        if (a[0] == null || a[1] == null || a[2] == null) { //checking none of the diagonals are null
         return false;
         }
         int n = a[0].length; // n is the length of each of the storage rows 
