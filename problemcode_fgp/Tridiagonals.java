@@ -43,7 +43,7 @@ static double[][] exampleMatrix(int n)
         if (v.length != n) { //checking wether the vector is the right size 
             return null;
         }
-        double[] upper = new double[T[0].length];
+        double[] upper = new double[T[0].length]; //copying the matrix diagonals and vector as the thomas algorithm modifies the values, and the input values must stay the same
         double[] main  = new double[T[1].length];
         double[] lower = new double[T[2].length];
         double[] b = new double[v.length];
