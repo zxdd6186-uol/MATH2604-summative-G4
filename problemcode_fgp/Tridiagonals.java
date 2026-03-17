@@ -34,17 +34,17 @@ static double[][] exampleMatrix(int n)
     }
 
     public static double[][] sum(double[][] a, doulbe[][] b) {
-        if (!isValidTridiagonal(a) || !isValidTridiagonal(b)) {
+        if (!isValidTridiagonal(a) || !isValidTridiagonal(b)) { // Check if the two matrices are valid via the isValidTridiagonal function
             return null;
         }
         int n = a[0].length;
-        if (b[0].length != n) {
+        if (b[0].length != n) { // Checks if a and b have the same number of columns
             return null;
         }
-        double[][] result = new double [3][n];
+        double[][] result = new double [3][n]; // Creates a new 3 by n matrix
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < n; j ++) {
-                result[i][j] = a[i][j] + b[i][j];
+                result[i][j] = a[i][j] + b[i][j]; // The i,jth entry of the new matrix is the sum of the i,jth entries of a and b
             }
         }
         return result;
