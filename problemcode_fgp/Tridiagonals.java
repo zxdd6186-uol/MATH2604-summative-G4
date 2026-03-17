@@ -33,6 +33,17 @@ static double[][] exampleMatrix(int n)
         return true;//returns true if all the other tests pass
     }
 
+/**
+ * Sums two tridiagonal matrices of the dimension 3 by n (whith n >= 1)
+ * 
+ * @param a the first tridiagonal matrix
+ * @param b the second tridiagonal matrix
+ * @return a new tridiagonal matrix which is the sum of a and b,
+ * or null if either matrix fails validation and/or the matrices have different dimension
+ * 
+ * Assumes all matrix entries are finite and real, that there is no restriction of numerical values and that arithmetic operations values will not overflow
+ */
+
     public static double[][] sum(double[][] a, doulbe[][] b) {
         if (!isValidTridiagonal(a) || !isValidTridiagonal(b)) { // Check if the two matrices are valid via the isValidTridiagonal function
             return null;
