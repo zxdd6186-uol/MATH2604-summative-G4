@@ -2,6 +2,16 @@ import static java.lang.Math.*;
 
 import java.util.Arrays;
 
+/**
+ * Provides methods for working with tridiagonal matrices of the form of a 3 by n array,
+ * with each row corresponding to upper, main and lower diagonals
+ * 
+ * Includes methods for giving tridiagonal matrices, validating tridiagonal matrices,
+ * summing tridiagonal matrices, calculating the product of two tridiagonal matrices and
+ * solving a linear system using tridiagonal matrices
+ * 
+ * Assumes finite double values and that matrices follow specificed storage format
+ */
 class Tridiagonals{
 
 static double[][] exampleMatrix(int n) 
