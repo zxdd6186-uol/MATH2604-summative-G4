@@ -32,6 +32,25 @@ static double[][] exampleMatrix(int n)
         } 
         return true;//returns true if all the other tests pass
     }
+
+    public static double[][] sum(double[][] a, doulbe[][] b) {
+        if (!isValidTridiagonal(a) || !isValidTridiagonal(b)) {
+            return null;
+        }
+        int n = a[0].length;
+        if (b[0].length != n) {
+            return null;
+        }
+        double[][] result = new double [3][n];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < n; j ++) {
+                result[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return result;
+
+    }
+
     public static double[] linearSolve(double[][] T, double[] v) {
         if (!isValidTridiagonal(T)){ //checks whether a is a valid tridiagonal matrix 
             return null;
