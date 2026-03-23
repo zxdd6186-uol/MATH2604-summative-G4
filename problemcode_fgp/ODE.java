@@ -1,7 +1,21 @@
 import static java.lang.Math.*;
 
+/**
+ * Provides a method to approximate the solution of a second-order
+ * differential equation
+ */
 class ODE
 {
+/**
+ * Approximates the value of f(0.5) for the second-order differential
+ * equation with boundary conditions
+ *
+ * @param a the constant value in the differential equation
+ * @param n the typically large and positive integer
+ * @return an approximation of f(0.5)
+ * 
+ * Assumes n is a positive value (n > 0)
+ */    
     public static double solve(double a, int n)
     {
         double h = 1.0 / (n + 1); // Divides the range [0,1] into n + 1 equal-sized intervals
