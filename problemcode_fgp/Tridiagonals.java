@@ -63,7 +63,7 @@ static double[][] exampleMatrix(int n)
  * Assumes all matrix entries are finite and real, that there is no restriction of numerical values and that arithmetic operations values will not overflow
  */
 
-    public static double[][] sum(double[][] a, doulbe[][] b) {
+    public static double[][] sum(double[][] a, double[][] b) {
         if (!isValidTridiagonal(a) || !isValidTridiagonal(b)) { // Check if the two matrices are valid via the isValidTridiagonal function
             return null;
         }
