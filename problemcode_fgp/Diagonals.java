@@ -3,6 +3,12 @@ import static org.junit.Assert.*;
  * Provides four methods for performing some basic operations on diagonal matrices
  * These matrices are represented as arrays containing the diagonal matrices
  */
+
+/**
+ * Creates and returns an example diagonal matrix stored as a 1D array.
+ *
+ * @return an array representing the diagonal elements of a matrix
+ */
 class Diagonals {
 
     public static double[] exampleMatrix() {

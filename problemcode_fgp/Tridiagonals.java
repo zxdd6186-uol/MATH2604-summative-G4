@@ -19,7 +19,16 @@ static double[][] exampleMatrix(int n)
         double m[][] = new double [1][1]; //dummy code: write your own
         return m; //dummy code: write your own
     }
-
+/**
+ * Checks whether a given matrix is a valid tridiagonal matrix of dimension 3 by n (with n >= 1)
+ * 
+ * @param a the matrix to be validated
+ * @return true if the matrix is a valid tridiagonal matrix,
+ * or false if the matrix is null, does not have exactly 3 rows, contains null rows,
+ * or if the rows are not all of the same length or have length less than 1
+ * 
+ * Assumes all matrix entries are finite and real and that no further structural properties are required
+ */
     public static boolean isValidTridiagonal(double[][] a) {
         if (a == null) {
             return false; 
