@@ -72,6 +72,19 @@ static double[][] exampleMatrix(int n)
 
     }
 
+    /**
+ * Solves the linear system Tx = v where T is a tridiagonal matrix of dimension 3 by n (with n >= 1)
+ * using the Thomas algorithm
+ * 
+ * @param T the tridiagonal matrix
+ * @param v the right-hand side vector
+ * @return a new vector x which is the solution to Tx = v,
+ * or null if the matrix fails validation, the vector is null, and/or the dimensions do not match
+ * 
+ * Assumes all matrix and vector entries are finite and real, that there is no restriction on numerical values 
+ * and that arithmetic operations will not overflow
+ */
+
     public static double[] linearSolve(double[][] T, double[] v) {
         if (!isValidTridiagonal(T)){ //checks whether a is a valid tridiagonal matrix 
             return null;
