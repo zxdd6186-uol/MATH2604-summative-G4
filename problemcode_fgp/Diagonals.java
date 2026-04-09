@@ -3,6 +3,8 @@ import static org.junit.Assert.*;
  * Provides four methods for performing some basic operations on diagonal matrices
  * These matrices are represented as arrays containing the diagonal matrices
  */
+ 
+ import java.util.Arrays;
 
 /**
  * Creates and returns an example diagonal matrix stored as a 1D array.
@@ -35,5 +37,12 @@ class Diagonals {
         }
         return result;
     }
+    public static void main(String[] args) {
+    double[] a = {1, 2, 3};
+    double[] b = {4, 5, 6};
 
+    System.out.println(Arrays.toString(sum(a, b)));       // [5, 7, 9]
+    System.out.println(Arrays.toString(product(a, b)));   // [4, 10, 18]
+    System.out.println(Arrays.toString(inverse(a)));      // [1, 0.5, 0.333...]
+    }
 }
