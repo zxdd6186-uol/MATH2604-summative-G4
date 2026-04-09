@@ -139,4 +139,5 @@ static double[][] exampleMatrix(int n)
             x[i] = (b[i] - upper[i] * x[i + 1]) / main[i]; //solving for xi
         }
         return x; //returning x from the equation Tx = v
+    }
 }
