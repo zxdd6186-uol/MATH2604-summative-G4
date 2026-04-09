@@ -139,19 +139,4 @@ static double[][] exampleMatrix(int n)
             x[i] = (b[i] - upper[i] * x[i + 1]) / main[i]; //solving for xi
         }
         return x; //returning x from the equation Tx = v
-    }
-    public static void main(String[] args) {
-    double[][] T = {
-        {1, 1, 0},
-        {2, 2, 2},
-        {1, 1, 0}
-    };
-
-    double[] v = {4, 8, 8};
-
-    System.out.println(isValidTridiagonal(T));
-
-    double[] x = linearSolve(T, v);
-    System.out.println(java.util.Arrays.toString(x));
-    }
 }
