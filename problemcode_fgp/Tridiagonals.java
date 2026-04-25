@@ -14,11 +14,21 @@ import java.util.Arrays;
  */
 class Tridiagonals{
 
-static double[][] exampleMatrix(int n) 
-    {
-        double m[][] = new double [1][1]; //dummy code: write your own
-        return m; //dummy code: write your own
+static double[][] exampleMatrix(int n)
+{
+    double[][] m = new double[3][n];
+
+    for (int i = 0; i < n; i++) {
+        m[1][i] = -(i + 1) * (i + 1);
     }
+
+    for (int i = 0; i < n - 1; i++) {
+        m[0][i] = 1;
+        m[2][i] = i + 2;
+    }
+
+    return m;
+}
 /**
  * Checks whether a given matrix is a valid tridiagonal matrix of dimension 3 by n (with n >= 1)
  * 
@@ -80,6 +90,38 @@ static double[][] exampleMatrix(int n)
         return result;
 
     }
+
+/**
+ * Computes the product of a diagonal matrix D and a tridiagonal matrix T.
+ *
+ * @param D the diagonal matrix stored as a one-dimensional array
+ * @param T the tridiagonal matrix stored as a 3 by n array
+ * @return the product D*T, or null if the inputs are invalid or dimensions do not match
+ */
+public static double[][] productWithDiagonal(double[] D, double[][] T) {
+    if (D == null || !isValidTridiagonal(T)) {
+        return null;
+    }
+
+    int n = T[0].length;
+
+    if (D.length != n) {
+        return null;
+    }
+
+    double[][] result = new double[3][n];
+
+    for (int i = 0; i < n; i++) {
+        result[1][i] = D[i] * T[1][i];
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        result[0][i] = D[i] * T[0][i];
+        result[2][i] = D[i + 1] * T[2][i];
+    }
+
+    return result;
+}
 
     /**
  * Solves the linear system Tx = v where T is a tridiagonal matrix of dimension 3 by n (with n >= 1)

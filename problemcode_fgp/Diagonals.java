@@ -1,10 +1,11 @@
 import static org.junit.Assert.*;
+
 /**
- * Provides four methods for performing some basic operations on diagonal matrices
- * These matrices are represented as arrays containing the diagonal matrices
+ * Provides four methods for performing some basic operations on diagonal matrices.
+ * These matrices are represented as arrays containing the diagonal entries.
  */
- 
- import java.util.Arrays;
+
+import java.util.Arrays;
 
 /**
  * Creates and returns an example diagonal matrix stored as a 1D array.
@@ -14,27 +15,82 @@ import static org.junit.Assert.*;
 class Diagonals {
 
     public static double[] exampleMatrix() {
-        double[] a = {10, 8, 5, -10, 7}; // creates the array for the diagonal elements of the matrix
-        return a; //returns the array which represents the diagonal for the matrix
+        double[] a = {10, 8, 5, -10, 7};
+        return a;
     }
 
-/**
- * Computes the inverse of a diagonal matrix by calculating the reciprocal of each diagonal entry.
- * 
- * @param a an array which contains the diagonal entries of the matrix
- * @return results an array which contains the reciprocals of each of the diagonal entries from the input matrix,
- * or null in the exceptional case wherein the input array is null
- * 
- * Assumes that the matrix is invertible, none of the diagonal entries are zero
- */
+    /**
+     * Computes the inverse of a diagonal matrix by calculating the reciprocal of each diagonal entry.
+     *
+     * @param a an array containing the diagonal entries of the matrix
+     * @return an array containing the reciprocals of each diagonal entry,
+     *         or null if the input array is null
+     *
+     * Assumes that the matrix is invertible and no diagonal entry is zero.
+     */
     public static double[] inverse(double[] a) {
         if (a == null) {
             return null;
         }
-        double[] result = new double[a.length]; // Creates a new array called result which is the same length as a
+
+        double[] result = new double[a.length];
+
         for (int i = 0; i < a.length; i++) {
-            result[i] = 1.0 / a[i]; // Calculates reciprocal of each entry
+            result[i] = 1.0 / a[i];
         }
+
+        return result;
+    }
+
+    /**
+     * Computes the sum of two diagonal matrices.
+     *
+     * @param a the first diagonal matrix
+     * @param b the second diagonal matrix
+     * @return the sum of the two matrices, or null if either input is null
+     *         or if the arrays have different lengths
+     */
+    public static double[] sum(double[] a, double[] b) {
+        if (a == null || b == null) {
+            return null;
+        }
+
+        if (a.length != b.length) {
+            return null;
+        }
+
+        double[] result = new double[a.length];
+
+        for (int i = 0; i < a.length; i++) {
+            result[i] = a[i] + b[i];
+        }
+
+        return result;
+    }
+
+    /**
+     * Computes the product of two diagonal matrices.
+     *
+     * @param a the first diagonal matrix
+     * @param b the second diagonal matrix
+     * @return the product of the two matrices, or null if either input is null
+     *         or if the arrays have different lengths
+     */
+    public static double[] product(double[] a, double[] b) {
+        if (a == null || b == null) {
+            return null;
+        }
+
+        if (a.length != b.length) {
+            return null;
+        }
+
+        double[] result = new double[a.length];
+
+        for (int i = 0; i < a.length; i++) {
+            result[i] = a[i] * b[i];
+        }
+
         return result;
     }
 }
