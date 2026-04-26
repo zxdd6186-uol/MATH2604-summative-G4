@@ -32,13 +32,10 @@ class Diagonals {
         if (a == null) {
             return null;
         }
-
-        double[] result = new double[a.length];
-
+        double[] result = new double[a.length]; // Creates a new array called result which is the same length as a
         for (int i = 0; i < a.length; i++) {
-            result[i] = 1.0 / a[i];
+            result[i] = 1.0 / a[i]; // Calculates reciprocal of each entry
         }
-
         return result;
     }
 
