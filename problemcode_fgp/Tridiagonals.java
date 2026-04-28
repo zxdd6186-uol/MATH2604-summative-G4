@@ -63,7 +63,7 @@ static double[][] exampleMatrix(int n)
     }
 
 /**
- * Sums two tridiagonal matrices of the dimension 3 by n (whith n >= 1)
+ * Sums two tridiagonal matrices of the dimension 3 by n (with n >= 1)
  * 
  * @param a the first tridiagonal matrix
  * @param b the second tridiagonal matrix
