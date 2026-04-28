@@ -1,5 +1,3 @@
-import static org.junit.Assert.*;
-
 /**
  * Provides four methods for performing some basic operations on diagonal matrices.
  * These matrices are represented as arrays containing the diagonal entries.
